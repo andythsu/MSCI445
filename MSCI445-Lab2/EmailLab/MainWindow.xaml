@@ -1,0 +1,23 @@
+﻿<Window x:Class="EmailLab.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmailLab"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+	<Grid Margin="0,0,3.6,-1">
+		<Label Content="To" HorizontalAlignment="Left" Margin="145,32,0,0" VerticalAlignment="Top"/>
+		<Label Content="From" HorizontalAlignment="Left" Margin="145,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.454,-1.257"/>
+		<Label Content="Message" HorizontalAlignment="Left" Margin="145,151,0,0" VerticalAlignment="Top"/>
+		<TextBox HorizontalAlignment="Left" Height="23" Margin="214,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+		<TextBox HorizontalAlignment="Left" Height="23" Margin="214,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+		<TextBox HorizontalAlignment="Left" Height="180" Margin="214,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="445"/>
+		<Button Content="Submit" HorizontalAlignment="Left" Margin="214,365,0,0" VerticalAlignment="Top" Width="75"/>
+		<PasswordBox HorizontalAlignment="Left" Margin="483,74,0,0" VerticalAlignment="Top" Width="176"/>
+		<Label Content="Password" HorizontalAlignment="Left" Margin="419,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.187,0.513"/>
+		<Label Content="Subject" HorizontalAlignment="Left" Margin="145,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.454,-1.257"/>
+		<TextBox HorizontalAlignment="Left" Height="23" Margin="214,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="445"/>
+
+	</Grid>
+</Window>
