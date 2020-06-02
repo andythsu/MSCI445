@@ -10,14 +10,14 @@
 		<Label Content="To" HorizontalAlignment="Left" Margin="145,32,0,0" VerticalAlignment="Top"/>
 		<Label Content="From" HorizontalAlignment="Left" Margin="145,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.454,-1.257"/>
 		<Label Content="Message" HorizontalAlignment="Left" Margin="145,151,0,0" VerticalAlignment="Top"/>
-		<TextBox HorizontalAlignment="Left" Height="23" Margin="214,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-		<TextBox HorizontalAlignment="Left" Height="23" Margin="214,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-		<TextBox HorizontalAlignment="Left" Height="180" Margin="214,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="445"/>
-		<Button Content="Submit" HorizontalAlignment="Left" Margin="214,365,0,0" VerticalAlignment="Top" Width="75"/>
-		<PasswordBox HorizontalAlignment="Left" Margin="483,74,0,0" VerticalAlignment="Top" Width="176"/>
+		<TextBox x:Name="to_textbox" HorizontalAlignment="Left" Height="23" Margin="214,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
+		<TextBox x:Name="from_textbox" HorizontalAlignment="Left" Height="23" Margin="214,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
+		<TextBox x:Name="message_textbox" HorizontalAlignment="Left" Height="180" Margin="214,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="445"/>
+		<Button x:Name="submit_button" Content="Submit" HorizontalAlignment="Left" Margin="214,365,0,0" VerticalAlignment="Top" Width="75" Click="Submit_Button_Click"/>
+		<PasswordBox x:Name="password_textbox" HorizontalAlignment="Left" Margin="483,74,0,0" VerticalAlignment="Top" Width="176"/>
 		<Label Content="Password" HorizontalAlignment="Left" Margin="419,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.187,0.513"/>
 		<Label Content="Subject" HorizontalAlignment="Left" Margin="145,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.454,-1.257"/>
-		<TextBox HorizontalAlignment="Left" Height="23" Margin="214,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="445"/>
+		<TextBox x:Name="subject_textbox" HorizontalAlignment="Left" Height="23" Margin="214,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="445"/>
 
 	</Grid>
 </Window>
