@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace EmailLab
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for PasswordWindow.xaml
     /// </summary>
     public partial class PasswordWindow : Window
     {

@@ -39,10 +39,21 @@ namespace EmailLab
 
 		private void Submit_Button_Click(object sender, RoutedEventArgs e)
         {
+			validateInput();
 			myEmail = new MyEmail(SUBJECT_TEXTBOX.Text, 
 				MESSAGE_TEXTBOX.Text, FROM_TEXTBOX.Text, "", TO_TEXTBOX.Text);
 			var passwordWindow = new PasswordWindow(myEmail);
 			passwordWindow.Show();
 		}
+
+        private void validateInput()
+        {
+			/**	Users tend to make mistakes in inputting data, 
+			 * please make the appropriate error checks to ensure that the user 
+			 * has inputted a valid email address and the sender's address is in fact a gmail address. 
+			 * No one likes receiving messages with only a Subject or only a Body, 
+			 * therefore please prompt the user to fill out both of these sections should they be empty.
+			*/
+        }
     }
 }
