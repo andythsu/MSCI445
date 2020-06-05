@@ -24,23 +24,25 @@ namespace EmailLab
 	{
 		readonly TextBox TO_TEXTBOX;
 		readonly TextBox FROM_TEXTBOX;
-		readonly PasswordBox PASSWORD_TEXTBOX;
 		readonly TextBox SUBJECT_TEXTBOX;
 		readonly TextBox MESSAGE_TEXTBOX;
+		MyEmail myEmail;
 
 		public MainWindow()
 		{
 			InitializeComponent();
 			TO_TEXTBOX = (TextBox) this.FindName("to_textbox");
 			FROM_TEXTBOX = (TextBox) this.FindName("from_textbox");
-			PASSWORD_TEXTBOX = (PasswordBox) this.FindName("password_textbox");
 			SUBJECT_TEXTBOX = (TextBox) this.FindName("subject_textbox");
 			MESSAGE_TEXTBOX = (TextBox) this.FindName("message_textbox");
 		}
 
 		private void Submit_Button_Click(object sender, RoutedEventArgs e)
         {
-			
-        }
+			myEmail = new MyEmail(SUBJECT_TEXTBOX.Text, 
+				MESSAGE_TEXTBOX.Text, FROM_TEXTBOX.Text, "", TO_TEXTBOX.Text);
+			var passwordWindow = new PasswordWindow(myEmail);
+			passwordWindow.Show();
+		}
     }
 }
