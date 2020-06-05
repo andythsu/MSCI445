@@ -24,7 +24,7 @@ namespace EmailLab
 	{
 		readonly TextBox TO_TEXTBOX;
 		readonly TextBox FROM_TEXTBOX;
-		readonly TextBox PASSWORD_TEXTBOX;
+		readonly PasswordBox PASSWORD_TEXTBOX;
 		readonly TextBox SUBJECT_TEXTBOX;
 		readonly TextBox MESSAGE_TEXTBOX;
 
@@ -33,7 +33,7 @@ namespace EmailLab
 			InitializeComponent();
 			TO_TEXTBOX = (TextBox) this.FindName("to_textbox");
 			FROM_TEXTBOX = (TextBox) this.FindName("from_textbox");
-			PASSWORD_TEXTBOX = (TextBox) this.FindName("password_textbox");
+			PASSWORD_TEXTBOX = (PasswordBox) this.FindName("password_textbox");
 			SUBJECT_TEXTBOX = (TextBox) this.FindName("subject_textbox");
 			MESSAGE_TEXTBOX = (TextBox) this.FindName("message_textbox");
 		}
