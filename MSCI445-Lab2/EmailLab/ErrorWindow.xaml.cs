@@ -20,17 +20,16 @@ namespace EmailLab
 {
     public partial class ErrorWindow : Window, INotifyPropertyChanged
     {
-        String errors;
-
-        public ErrorWindow(String errors)
+        // declare variables
+        private string _errormessage = "this is the error message";
+        public ErrorWindow(string errors)
         {
             InitializeComponent();
-            this.errors = errors;
-            DataContext = this;
-            this._errormessage = this.errors;
+            // initialize variables
+            _errormessage = errors;
         }
 
-        private string _errormessage = "this is the error message";
+        // getter and setter
         public string errormessage
         {
             get { return _errormessage; }
@@ -58,15 +57,10 @@ namespace EmailLab
         }
         #endregion
 
-
+        // close the window if ok button is clicked
         private void OK_Button_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void MyTargetControl_Checked(object sender, RoutedEventArgs e)
-        {
-
+            Close();
         }
     }
 }
