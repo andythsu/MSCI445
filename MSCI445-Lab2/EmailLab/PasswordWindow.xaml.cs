@@ -19,24 +19,43 @@ namespace EmailLab
     /// </summary>
     public partial class PasswordWindow : Window
     {
+        // declare a custom email class
         readonly MyEmail myEmail;
+        // declare a passwordbox variable
         readonly PasswordBox PASSWORD_TEXTBOX;
 
         public PasswordWindow(MyEmail myEmail)
         {
+            // initialize component
             InitializeComponent();
+            // initialize myEmail
             this.myEmail = myEmail;
-            PASSWORD_TEXTBOX = (PasswordBox)this.FindName("password_textbox");
+            // initialize password box
+            PASSWORD_TEXTBOX = (PasswordBox)FindName("password_textbox");
         }
 
         private void Submit_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.myEmail.setPassword(PASSWORD_TEXTBOX.Password);
-            myEmail.send();
+            // set the password to the password inputted by user
+            myEmail.setPassword(PASSWORD_TEXTBOX.Password);
+            // send the email
+            if (myEmail.send())
+            {
+                // if email is send successfully, display a success message
+                MessageBox.Show("Email successfully delivered");
+            }
+            else
+            {
+                // if email failed to send, display a failure message
+                MessageBox.Show("Email failed to deliver");
+            }
+            // close passwordbox at the end
+            Close();
         }
+        // if cancel button is clicked, close the password form
         private void Cancel_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }
