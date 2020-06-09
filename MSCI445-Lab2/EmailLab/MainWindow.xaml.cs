@@ -73,14 +73,14 @@ namespace EmailLab
 				if (to != "") { 
 					MailAddress r = new MailAddress(to); 
 				} else { 
-					errors += "Receiver's email address can not be empty. \n";
+					errors += "Recipient's email address can not be empty. \n";
 					stats = false;
 				}
 			}
 			catch (FormatException)
 			{
 				// append error
-				errors += "Sender's or user's email address is invalid.\n";
+				errors += "Sender's or recipient's email address is invalid.\n";
 				// return false
 				stats = false;
 			}
