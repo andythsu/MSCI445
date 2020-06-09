@@ -27,6 +27,8 @@ namespace EmailLab
             InitializeComponent();
             // initialize variables
             _errormessage = errors;
+            // bind current datacontext to update UI dynamically
+            DataContext = this;
         }
 
         // getter and setter

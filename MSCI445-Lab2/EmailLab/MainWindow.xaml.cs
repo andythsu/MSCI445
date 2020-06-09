@@ -40,21 +40,21 @@ namespace EmailLab
 			MESSAGE_TEXTBOX = (TextBox) this.FindName("message_textbox");
 		}
 
-		private void Submit_Button_Click(object sender, RoutedEventArgs e)
+		private void Submit_Button_Click(object obj, RoutedEventArgs e)
         {
 			string subject = SUBJECT_TEXTBOX.Text;
 			string message = MESSAGE_TEXTBOX.Text;
-			string from = FROM_TEXTBOX.Text;
+			string sender = FROM_TEXTBOX.Text;
 			string to = TO_TEXTBOX.Text;
 			// if input is valid, prompt the user to enter password
-			if (validateInput(subject, message, from , to)) {
-				myEmail = new MyEmail(subject, message, from, "", to);
+			if (validateInput(subject, message, sender, to)) {
+				myEmail = new MyEmail(subject, message, sender, "", to);
 				var passwordWindow = new PasswordWindow(myEmail);
 				passwordWindow.Show();
 			};
 		}
 
-		private bool validateInput(string subject, string message, string from, string to)
+		private bool validateInput(string subject, string message, string sender, string to)
         {
 			// default value is true
 			bool stats = true;
@@ -63,20 +63,30 @@ namespace EmailLab
 			try
 			{
 				// if sender is empty, show the error
-				if (from != "") { MailAddress s = new MailAddress(from); } else { errors += "Sender's email address can not be empty. \n"; }
+				if (sender != "") {
+					MailAddress s = new MailAddress(sender); 
+				} else {
+					errors += "Sender's email address can not be empty. \n";
+					stats = false;
+				}
 				// if recipient is empty, show the error
-				if (to != "") { MailAddress r = new MailAddress(to); } else { errors += "Receiver's email address can not be empty. \n"; }
+				if (to != "") { 
+					MailAddress r = new MailAddress(to); 
+				} else { 
+					errors += "Recipient's email address can not be empty. \n";
+					stats = false;
+				}
 			}
 			catch (FormatException)
 			{
 				// append error
-				errors += "Sender's or user's email address is invalid.\n";
+				errors += "Sender's or recipient's email address is invalid.\n";
 				// return false
 				stats = false;
 			}
 
 			// if sender is not using gmail, return error
-            if (!from.EndsWith("@gmail.com", true, null) && from != "")
+            if (!sender.EndsWith("@gmail.com", true, null) && sender != "")
             {
 				errors += "Sender is not using Gmail. \n";
 				stats = false;
