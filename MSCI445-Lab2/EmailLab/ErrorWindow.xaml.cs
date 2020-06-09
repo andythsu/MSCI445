@@ -27,6 +27,7 @@ namespace EmailLab
             InitializeComponent();
             // initialize variables
             _errormessage = errors;
+            DataContext = this;
         }
 
         // getter and setter
