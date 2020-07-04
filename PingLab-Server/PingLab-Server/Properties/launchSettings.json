@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PingLab-Server": {
+      "commandName": "Project",
+      "commandLineArgs": "1055"
+    }
+  }
+}
