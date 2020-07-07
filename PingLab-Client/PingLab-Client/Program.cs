@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 
@@ -9,15 +10,24 @@ namespace PingLab_Client
 {
     class Program
     {
-        private const string HOST = "127.0.0.1";
-        private const int PORT = 1055;
+        //private const string HOST = "127.0.0.1";
+        //private const int PORT = 1055;
         private static UdpClient udpClient;
         static void Main(string[] args)
         {
+            if (args.Length != 2)
+            {
+                Console.WriteLine("Required arguments: ");
+                Console.WriteLine("First: host");
+                Console.WriteLine("Second: port");
+                return;
+            }
+            string host = args[0];
+            int port = Convert.ToInt32(args[1]);
             Stopwatch stopWatch = new Stopwatch();
             // Create a datagram socket for receiving and sending UDP packets
-            // through the port specified on the command line.
-            udpClient = new UdpClient(HOST, PORT);
+            // through the host and port specified on the command line.
+            udpClient = new UdpClient(host, port);
             udpClient.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
             udpClient.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReceiveTimeout, 1000); // set timeout
 
